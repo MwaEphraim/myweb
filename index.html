@@ -3,130 +3,222 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name+="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio | ICT251 Activity 3</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <h1>Welcome To Web Programming</h1>
-        <h2> Ephraim Mwansa. 202509512</h2>
+        <div class="header-container">
+            <a href="#" class="brand-logo">&lt;Portfolio/&gt;</a>
+            <button id="menu-toggle" class="nav-toggle">☰ Menu</button>
+            <nav id="navbar" class="nav-menu">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#plan">Plan</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle-btn" class="theme-btn">🌙 Theme</button>
+        </div>
     </header>
 
-    <nav>
-        <a href="#about">About Me</a> |
-        <a href="#hobbies">Hobbies</a> |
-        <a href="#learning-plan">Learning Plan</a> |
-        <a href="#photos">Photos</a> |
-        <a href="#media">Media</a> |
-        <a href="#contact">Contact</a>
-        <nav>
+    <main>
+        <section class="hero-section card">
+            <h1>Engineering Interactive Digital Experiences</h1>
+            <p>Computer Science & Engineering Student specializing in software development, web interfaces, and system
+                architecture.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">Explore Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </section>
 
-            <main>
-                <section id="about">
-                    <h2>About Me</h2>
-                    <p>I'm Ephraim, and I am a university student pursuing studies in engineering and computer science
-                        at Mulungushi University. I am deeply passionate about technology, software development, and
-                        building functional models from scratch. Through my coursework, I am continuously expanding my
-                        knowledge in web programming, problem-solving, and modern technical tools.</p>
-                </section>
+        <section id="about" class="content-section card">
+            <h2>About Me</h2>
+            <p>
+                Hello! I am an ambitious Computer Science and Engineering student focused on software architecture,
+                algorithmic logic, and web technology design. Throughout my studies, I have developed solutions in Java,
+                Python, and full-stack web technologies. I am passionate about engineering clean, maintainable software
+                systems that bridge hardware and software concepts.
+            </p>
+        </section>
 
-                <section id="hobbies">
-                    <h2>Hobbies</h2>
-                    <ul>
-                        <ul>Watching Football</ul>
-                        <ul>Watching Series</ul>
-                        <ul>Playing Games</ul>
-                        <ul>
-                            <section>
+        <section id="hobbies" class="content-section card">
+            <h2>Hobbies & Pursuits</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <h3>Software Engineering</h3>
+                    <p>Building Java applications, experimenting with web layouts, and optimizing runtime efficiency.
+                    </p>
+                </div>
+                <div class="hobby-card">
+                    <h3>Fitness & Jump Rope</h3>
+                    <p>Maintaining active routines with smart tracking and digital jump rope workouts.</p>
+                </div>
+                <div class="hobby-card">
+                    <h3>Hardware Optimization</h3>
+                    <p>Troubleshooting personal computer systems, configuring environment PATHs, and managing
+                        installations.</p>
+                </div>
+            </div>
+        </section>
 
-                                <section id="learning-plan">
-                                    <h2>My Learning Plan</h2>
-                                    <ol>
-                                        <li>Consistently practice writing clean, semantic HTML and CSS code every
-                                            day.</li>
-                                        <li>Build small hands-on web projects to better understand layout design and
-                                            user interaction.</li>
-                                        <li>Review online documentation and tutorials regularly to learn advanced
-                                            web development techniques.</li>
-                                    </ol>
-                                </section>
+        <section id="plan" class="content-section card">
+            <h2>Academic Roadmap</h2>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Core Focus</th>
+                            <th>Target Milestone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Phase 01</td>
+                            <td>OOP & Advanced Data Structures</td>
+                            <td>Master object-oriented patterns, binary trees, and algorithm complexity.</td>
+                        </tr>
+                        <tr>
+                            <td>Phase 02</td>
+                            <td>Web Technologies & Interactive UI</td>
+                            <td>Construct responsive client-side interfaces using CSS grid/flexbox and JS DOM logic.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phase 03</td>
+                            <td>Microprocessors & Systems Architecture</td>
+                            <td>Analyze register allocation, microprocessor buses, and logic automation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-                                <section id="photos">
-                                    <h2>My Photos</h2>
-                                    <p>Here are my pictures:</p>
+        <section id="projects" class="content-section card">
+            <h2>Projects & Skills</h2>
+            <div class="search-filter-container">
+                <input type="text" id="project-search" placeholder="Filter projects or skills...">
+                <button id="reset-search-btn" class="btn btn-secondary">Reset</button>
+            </div>
 
-                                    <div>
-                                        <img src="images/photos1.jpg" alt="A photo of me">
-                                        <p>Caption: Currently workin on desk setup and development environment.</p>
-                                    </div>
+            <div id="no-results-msg" class="hidden">No matching projects found.</div>
 
-                                    <div>
-                                        <img src="images/photos2.jpg"
-                                            alt="Small amout of work every hour adds a step ahead to the success">
-                                        <p>Caption: We never never up no matter the errors.</p>
-                                    </div>
+            <div class="project-grid" id="project-list">
+                <article class="project-card" data-category="java desktop gui gradle">
+                    <span class="card-tag">Java</span>
+                    <h3>JavaFX Desktop Application</h3>
+                    <p>Designed a modular desktop GUI application using FXML layout panes, service layers, and Gradle
+                        build management.</p>
+                </article>
 
-                                    <div>
-                                        <img src="images/photos3.jpg" alt="Yeah thats me">
-                                        <p>Caption: Working on system configuration and web files.</p>
-                                    </div>
-                                </section>
+                <article class="project-card" data-category="python algorithms recursion numpy">
+                    <span class="card-tag">Python</span>
+                    <h3>Algorithm Performance Suite</h3>
+                    <p>Implemented recursive functions, matrix manipulations, and computational complexity models using
+                        Python.</p>
+                </article>
 
-                                <section id="media">
-                                    <h2>My Media</h2>
-                                    <p>Here are my introductory video and audio recordings:</p>
+                <article class="project-card" data-category="web javascript html css responsive">
+                    <span class="card-tag">Web Tech</span>
+                    <h3>Interactive Personal Website</h3>
+                    <p>Built a responsive web application featuring custom styling, dynamic DOM manipulation, and
+                        validation.</p>
+                </article>
+            </div>
+        </section>
 
-                                    <!-- Video Player -->
-                                    <div>
-                                        <h3>My Introduction Video</h3>
-                                        <video width="320" height="240" controls>
-                                            <source src="videos/videos.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <p><strong>Description:</strong> A short introduction video stating my name,
-                                            program, and my course.</p>
-                                    </div>
+        <section id="gallery" class="content-section card">
+            <h2>Interactive Gallery</h2>
+            <div class="gallery-viewport">
+                <div class="gallery-image-frame">
+                    <img id="gallery-img" src="images/photos1.jpg" alt="Academic workspace setup">
+                </div>
+                <p id="gallery-caption">My primary developer workspace for programming and engineering coursework.</p>
+                <div class="gallery-controls">
+                    <button id="prev-photo-btn" class="btn btn-secondary">Previous</button>
+                    <span id="gallery-counter">1 / 3</span>
+                    <button id="next-photo-btn" class="btn btn-secondary">Next</button>
+                </div>
+            </div>
+        </section>
 
-                                    <!-- Audio Player -->
-                                    <div>
-                                        <h3>My Hobby Audio Clip</h3>
-                                        <audio controls>
-                                            <source src="audio/voice.aac" type="audio/aac">
-                                            <source src="audio/voice.mp3" type="audio/mpeg">
-                                            Your browser does not support the audio element.
-                                        </audio>
-                                        <p><strong>Description:</strong> A brief audio clip describing my passion for
-                                            learning web technologies.</p>
-                                    </div>
-                                </section>
+        <section id="media" class="content-section card">
+            <h2>Media Demonstrations</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <h3>Project Showcase Video</h3>
+                    <video controls width="100%">
+                        <source src="videos/videos.mp4" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </article>
 
-                                <section id="contact">
-                                    <h2>Contact</h2>
-                                    <p>Feel free to reach out or connect with me via the form below:</p>
-                                    <p>Email: mwaephraim@gmail.com | Phone: 0761297689 | Student ID: 202509512</p>
+                <article class="media-card">
+                    <h3>Audio Summary</h3>
+                    <audio controls style="width: 100%;">
+                        <source src="audio/voice.aac" type="audio/aac">
+                        Your browser does not support audio.
+                    </audio>
 
-                                    <form>
-                                        <label for="name">Your Name:</label><br>
-                                        <input type="text" id="name" name="name"><br><br>
 
-                                        <label for="email">Your Email:</label><br>
-                                        <input type="email" id="email" name="email"><br><br>
+                </article>
+            </div>
+        </section>
 
-                                        <label for="message">Message:</label><br>
-                                        <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+        <section id="faq" class="content-section card">
+            <h2>Frequently Asked Questions</h2>
+            <button id="faq-toggle-btn" class="btn btn-secondary">Toggle Academic Details</button>
+            <div id="faq-content" class="expandable-panel hidden">
+                <p><strong>Technologies used:</strong> Semantic HTML5, CSS layout modules, ES6 JavaScript, and Render
+                    deployment.</p>
+            </div>
+        </section>
 
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </section>
+        <section id="contact" class="content-section card">
+            <h2>Contact Me</h2>
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="user-name">Full Name *</label>
+                    <input type="text" id="user-name" name="name" required>
+                    <span class="error-msg" id="name-error"></span>
+                </div>
 
-            </main>
+                <div class="form-group">
+                    <label for="user-email">Email Address *</label>
+                    <input type="email" id="user-email" name="email" required>
+                    <span class="error-msg" id="email-error"></span>
+                </div>
 
-            <footer>
-                <p>&copy; 2026 Ephraim Mwansa</p>
-            </footer>
+                <div class="form-group">
+                    <label for="user-message">Message *</label>
+                    <textarea id="user-message" name="message" rows="4" required></textarea>
+                    <span class="error-msg" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+            </form>
+
+            <div id="form-preview" class="preview-card hidden">
+                <h3>Form Submission Preview</h3>
+                <p class="demo-badge">Browser demonstration only — no message is sent.</p>
+                <div id="preview-output"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portfolio. Built for ICT251 Activity 3.</p>
+    </footer>
 
 </body>
 
